@@ -7,7 +7,7 @@ export default function Home() {
         </h1>
 
         <p className="text-xl max-w-2xl mx-auto mb-8">
-          Taller especializado, venta de bicicletas, accesorios y servicio profesional en Metepec.
+          Taller profesional especializado, venta de bicicletas, accesorios y servicio profesional en Metepec.
         </p>
 
         <a
