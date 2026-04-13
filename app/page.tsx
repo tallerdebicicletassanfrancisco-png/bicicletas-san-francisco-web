@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Home() {
   const whatsappLink =
     "https://wa.me/527222941031?text=Hola%20quiero%20agendar%20servicio%20para%20mi%20bicicleta";
@@ -7,9 +8,15 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-red-600">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-red-500">
-            Bicicletas San Francisco
-          </h1>
+          <div className="flex items-center gap-3">
+          <Image
+            src="/images/logo.png"
+           alt="Bicicletas San Francisco"
+           width={180}
+           height={60}
+           className="h-12 w-auto"
+           priority/>
+</div>
 
           <a
             href={whatsappLink}
@@ -33,9 +40,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 max-w-4xl">
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Taller y Venta de Bicicletas en Metepec
-          </h2>
+          </h1>
 
           <p className="text-2xl mb-8">
             Servicio profesional, rápido y garantizado.
@@ -90,7 +97,7 @@ export default function Home() {
         </div>
 
         <p className="text-center mt-10 text-xl">
-          Garantía de 30 días en todas las reparaciones
+          Y mucho más... ¡Contáctanos para cualquier necesidad de tu bicicleta!
         </p>
       </section>
 
@@ -131,10 +138,13 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-8">Contáctanos</h2>
 
             <p className="mb-4">
-              📍 Cam. Viejo a San Mateo 495, Bella Vista, Metepec
+              📍 Cam. Viejo a San Mateo 494, Bella Vista, Metepec.
             </p>
-            <p className="mb-4">🕒 Lunes a sábado 10:00 AM - 6:00 PM</p>
+            <p className="mb-4">🕒 Lunes a Viernes 10:00 AM - 6:00 PM</p>
+            <p className="mb-4">🕒 Sábado 10:00 AM - 4:00 PM</p>
+            <p className="mb-4">🕒 Domingo 2:00 PM</p>
             <p className="mb-6">📞 WhatsApp: 722 294 1031</p>
+            <p className="mb-6">📞 WhatsApp: 722 700 8264</p>
 
             <a
               href="https://maps.app.goo.gl/EAnNPgVaKDq9dNiF6"
