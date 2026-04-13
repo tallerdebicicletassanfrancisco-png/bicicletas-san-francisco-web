@@ -59,6 +59,47 @@ export default function Home() {
           </div>
         </div>
       </section>
+            {/* UBICACIÓN */}
+      <section className="py-20 px-6 bg-gray-100">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Visítanos en Metepec 📍
+        </h2>
+
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">
+              Bicicletas San Francisco
+            </h3>
+
+            <p className="mb-3">
+              📍 Metepec, Estado de México
+            </p>
+
+            <p className="mb-3">
+              🕒 Lunes a sábado: 10:00 am - 7:00 pm
+            </p>
+
+            <p className="mb-6">
+              ⭐ Más de 100 clientes satisfechos
+            </p>
+
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-black text-white px-6 py-3 rounded-xl"
+            >
+              Ver ubicación
+            </a>
+          </div>
+
+          <iframe
+            src="https://www.google.com/maps?q=Metepec&output=embed"
+            className="w-full h-[400px] rounded-2xl shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      </section>
 
       {/* BOTÓN WHATSAPP */}
       <a
