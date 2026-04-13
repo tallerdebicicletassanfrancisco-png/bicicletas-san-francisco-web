@@ -21,7 +21,7 @@ export default function Home() {
           </p>
 
           <a
-            href="wa.me/527227008264"
+            href="https://wa.me/527227008264"
             className="inline-block bg-red-600 hover:bg-red-700 px-8 py-4 rounded-2xl text-lg font-semibold"
           >
             Agenda tu servicio
@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* WHATSAPP FLOTANTE */}
       <a
-        href="https://wa.me/52722TU_NUMERO"
+        href="https://wa.me/527227008264"
         className="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-4 rounded-full shadow-2xl text-lg font-bold"
       >
         WhatsApp
