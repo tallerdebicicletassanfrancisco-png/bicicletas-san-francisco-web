@@ -21,7 +21,7 @@ export default function Home() {
           </p>
 
           <a
-            href="https://wa.me/527227008264"
+            href="wa.me/527227008264"
             className="inline-block bg-red-600 hover:bg-red-700 px-8 py-4 rounded-2xl text-lg font-semibold"
           >
             Agenda tu servicio
