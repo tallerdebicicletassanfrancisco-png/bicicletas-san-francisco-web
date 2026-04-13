@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-            {/* UBICACIÓN */}
+                  {/* UBICACIÓN */}
       <section className="py-20 px-6 bg-gray-100">
         <h2 className="text-4xl font-bold text-center mb-12">
           Visítanos en Metepec 📍
@@ -68,33 +68,49 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h3 className="text-2xl font-semibold mb-4">
-              Bicicletas San Francisco
+              Taller de Bicicletas San Francisco 🚲
             </h3>
 
             <p className="mb-3">
-              📍 Metepec, Estado de México
+              📍 Cam. Viejo a San Mateo 495, Bella Vista, 52172 San Salvador
+              Tizatlalli, Méx.
             </p>
 
             <p className="mb-3">
-              🕒 Lunes a sábado: 10:00 am - 7:00 pm
+              🕒 Abierto · Cierra a las 6:00 p.m.
+            </p>
+
+            <p className="mb-3">
+              ⭐ 4.1 estrellas (13 opiniones)
             </p>
 
             <p className="mb-6">
-              ⭐ Más de 100 clientes satisfechos
+              📞 722 700 8264
             </p>
 
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-black text-white px-6 py-3 rounded-xl"
-            >
-              Ver ubicación
-            </a>
+            <div className="flex gap-4 flex-wrap">
+              <a
+                href="https://maps.app.goo.gl/EAnNPgVaKDq9dNiF6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-black text-white px-6 py-3 rounded-xl"
+              >
+                Ver ubicación
+              </a>
+
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl"
+              >
+                Facebook
+              </a>
+            </div>
           </div>
 
           <iframe
-            src="https://www.google.com/maps?q=Metepec&output=embed"
+            src="https://www.google.com/maps?q=Camino%20Viejo%20a%20San%20Mateo%20495%20Metepec&output=embed"
             className="w-full h-[400px] rounded-2xl shadow-lg"
             loading="lazy"
           />
