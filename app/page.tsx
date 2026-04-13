@@ -1,4 +1,7 @@
 export default function Home() {
+  const whatsappLink =
+    "https://wa.me/527227008264?text=Hola%20quiero%20cotizar%20una%20bicicleta";
+
   return (
     <main className="min-h-screen bg-white text-black">
       {/* HERO */}
@@ -21,7 +24,9 @@ export default function Home() {
           </p>
 
           <a
-            href="https://wa.me/527227008264"
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-red-600 hover:bg-red-700 px-8 py-4 rounded-2xl text-lg font-semibold"
           >
             Agenda tu servicio
@@ -47,18 +52,22 @@ export default function Home() {
           </div>
 
           <div className="p-6 rounded-2xl shadow-lg border">
-            <h3 className="text-2xl font-semibold mb-3">Venta de bicicletas</h3>
+            <h3 className="text-2xl font-semibold mb-3">
+              Venta de bicicletas
+            </h3>
             <p>Bicicletas usadas y accesorios listos para rodar.</p>
           </div>
         </div>
       </section>
 
-      {/* WHATSAPP FLOTANTE */}
+      {/* BOTÓN WHATSAPP */}
       <a
-        href="https://wa.me/527227008264"
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-4 rounded-full shadow-2xl text-lg font-bold"
       >
-        WhatsApp
+        💬 WhatsApp
       </a>
     </main>
   );
