@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Home() {
   const whatsappLink =
-    "https://wa.me/527222941031?text=Hola%20quiero%20agendar%20servicio%20para%20mi%20bicicleta";
+    "https://wa.me/527227008264?text=Hola%20quiero%20agendar%20servicio%20para%20mi%20bicicleta";
 
   return (
     <main className="bg-black text-white min-h-screen">
@@ -142,7 +142,7 @@ export default function Home() {
             </p>
             <p className="mb-4">🕒 Lunes a Viernes 10:00 AM - 6:00 PM</p>
             <p className="mb-4">🕒 Sábado 10:00 AM - 4:00 PM</p>
-            <p className="mb-4">🕒 Domingo 2:00 PM</p>
+            <p className="mb-4">🕒 Domingo 11:00 AM - 2:00 PM</p>
             <p className="mb-6">📞 WhatsApp: 722 294 1031</p>
             <p className="mb-6">📞 WhatsApp: 722 700 8264</p>
 
