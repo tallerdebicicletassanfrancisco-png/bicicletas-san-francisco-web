@@ -8,14 +8,8 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-red-600">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-           alt="Bicicletas San Francisco"
-           width={180}
-           height={60}
-           className="h-12 w-auto"
-           priority/>
+          <div className="flex items-center">
+          <Image src="/images/logo.png" alt="Bicicletas San Francisco" width={220} height={70} className="h-12 w-auto" priority/>
 </div>
 
           <a
@@ -130,6 +124,31 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* GALERÍA */}
+      <section className="py-20 px-6 border-t border-red-600">
+        <h2 className="text-4xl font-bold text-center mb-14">
+        Trabajos <span className="text-red-500">Recientes</span>
+      </h2>
+
+      <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <img
+      src="https://images.unsplash.com/photo-1511994298241-608e28f14fde"
+      className="rounded-2xl h-72 w-full object-cover"
+      alt="Trabajo 1"
+      />
+      <img
+      src="https://images.unsplash.com/photo-1541625602330-2277a4c46182"
+      className="rounded-2xl h-72 w-full object-cover"
+      alt="Trabajo 2"
+      />
+      <img
+      src="https://images.unsplash.com/photo-1485965120184-e220f721d03e"
+      className="rounded-2xl h-72 w-full object-cover"
+      alt="Trabajo 3"
+      />
+    </div>
+</section>
 
       {/* CONTACTO */}
       <section className="py-20 px-6 border-t border-red-600 bg-zinc-950">
