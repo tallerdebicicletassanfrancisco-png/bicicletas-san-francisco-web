@@ -10,13 +10,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div className="flex items-center">
   <Image
-    src="/images/logo.png"
-    alt="Bicicletas San Francisco"
-    width={220}
-    height={70}
-    priority
-    className="h-12 w-auto object-contain"
-  />
+  src="/images/logo2.png"
+  alt="Bicicletas San Francisco"
+  width={220}
+  height={70}
+  priority
+  className="h-12 w-auto object-contain"
+/>
 </div>
 
           <a
