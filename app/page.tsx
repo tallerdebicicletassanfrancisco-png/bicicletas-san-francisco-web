@@ -6,38 +6,49 @@ export default function Home() {
   return (
     <main className="bg-black text-white min-h-screen">
       {/* NAVBAR */}
-      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-red-600">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div className="flex items-center gap-3">
-  <Image
-    src="/images/logo2.png"
-    alt="Bicicletas San Francisco"
-    width={260}
-    height={90}
-    priority
-    className="h-16 w-auto object-contain"
-  />
-  
-  <div className="leading-tight">
-    <p className="text-white text-xl font-bold tracking-wide">
-      Bicicletas
-    </p>
-    <p className="text-red-500 text-lg font-semibold">
-      San Francisco
-    </p>
-  </div>
-</div>
+      {/* NAVBAR */}
+<nav className="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-red-600/50 shadow-lg">
+  <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    
+    {/* Logo + Marca */}
+    <div className="flex items-center gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer">
+      <Image
+        src="/images/logo2.png"
+        alt="Bicicletas San Francisco"
+        width={280}
+        height={100}
+        priority
+        className="h-16 w-auto object-contain"
+      />
 
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 px-5 py-2 rounded-xl font-semibold"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </nav>
+      <div className="leading-tight">
+        <p className="text-white text-xl font-bold tracking-wide">
+          Bicicletas
+        </p>
+        <p className="text-red-500 text-lg font-semibold">
+          San Francisco
+        </p>
+      </div>
+    </div>
+
+    {/* Menú */}
+    <div className="hidden md:flex gap-8 text-white font-medium">
+      <a href="#inicio" className="hover:text-red-500 transition">Inicio</a>
+      <a href="#servicios" className="hover:text-red-500 transition">Servicios</a>
+      <a href="#reseñas" className="hover:text-red-500 transition">Reseñas</a>
+      <a href="#contacto" className="hover:text-red-500 transition">Contacto</a>
+    </div>
+
+    {/* Botón WhatsApp */}
+    <a
+      href="https://wa.me/527222941031"
+      target="_blank"
+      className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105"
+    >
+      WhatsApp
+    </a>
+  </div>
+</nav>
 
       {/* HERO */}
       <section
