@@ -8,15 +8,24 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-red-600">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div className="flex items-center">
+      <div className="flex items-center gap-3">
   <Image
-  src="/images/logo2.png"
-  alt="Bicicletas San Francisco"
-  width={220}
-  height={70}
-  priority
-  className="h-12 w-auto object-contain"
-/>
+    src="/images/logo2.png"
+    alt="Bicicletas San Francisco"
+    width={260}
+    height={90}
+    priority
+    className="h-16 w-auto object-contain"
+  />
+  
+  <div className="leading-tight">
+    <p className="text-white text-xl font-bold tracking-wide">
+      Bicicletas
+    </p>
+    <p className="text-red-500 text-lg font-semibold">
+      San Francisco
+    </p>
+  </div>
 </div>
 
           <a
