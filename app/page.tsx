@@ -1,7 +1,32 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./firebase";
+
 export default function Home() {
+const [content, setContent] = useState({
+  title: "",
+  subtitle: "",
+  whatsapp: "",
+});
+
+useEffect(() => {
+  const fetchData = async () => {
+    const docRef = doc(db, "siteContent", "homepage");
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      setContent(docSnap.data() as any);
+    }
+  };
+
+  fetchData();
+}, []);
+
   const whatsappLink =
-    "https://wa.me/527227008264?text=Hola%20quiero%20agendar%20servicio%20para%20mi%20bicicleta";
+    `https://wa.me/${content.whatsapp}?text=Hola%20quiero%20agendar%20servicio%20para%20mi%20bicicleta`;
 
   return (
     <main className="bg-black text-white min-h-screen">
@@ -41,7 +66,7 @@ export default function Home() {
 
     {/* Botón WhatsApp */}
     <a
-      href="https://wa.me/527222941031"
+      href={whatsappLink}
       target="_blank"
       className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105"
     >
@@ -62,11 +87,11 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Taller y Venta de Bicicletas en Metepec
+            {content.title}
           </h1>
 
           <p className="text-2xl mb-8">
-            Servicio profesional, rápido y garantizado.
+            {content.subtitle}
           </p>
 
           <div className="flex gap-4 flex-wrap">
@@ -189,8 +214,7 @@ export default function Home() {
             <p className="mb-4">🕒 Lunes a Viernes 10:00 AM - 6:00 PM</p>
             <p className="mb-4">🕒 Sábado 10:00 AM - 4:00 PM</p>
             <p className="mb-4">🕒 Domingo 11:00 AM - 2:00 PM</p>
-            <p className="mb-6">📞 WhatsApp: 722 294 1031</p>
-            <p className="mb-6">📞 WhatsApp: 722 700 8264</p>
+            <p className="mb-6">📞 WhatsApp: {content.whatsapp}</p>
 
             <a
               href="https://maps.app.goo.gl/EAnNPgVaKDq9dNiF6"
