@@ -9,10 +9,11 @@ export default function LoginPage() {
       await signInWithPopup(auth, googleProvider);
 
       window.location.href = "/admin";
-    } catch (error) {
-      console.error(error);
-      alert("Error al iniciar sesión");
-    }
+    } 
+    catch (error: any) {
+  console.error(error);
+  alert(error.message);
+}
   };
 
   return (
