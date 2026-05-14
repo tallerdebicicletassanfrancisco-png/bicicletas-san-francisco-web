@@ -1,123 +1,141 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
 import {
-  doc,
-  getDoc,
-  updateDoc,
-} from "firebase/firestore";
-
-import { auth } from "../firebase";
-import { db } from "../firebase";
+  LayoutDashboard,
+  Images,
+  Wrench,
+  Boxes,
+  ShoppingCart,
+  Settings,
+} from "lucide-react";
 
 export default function AdminPage() {
-  const [authorized, setAuthorized] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  const [title, setTitle] = useState("");
-  const [subtitle, setSubtitle] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (
-        user &&
-        user.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL
-      ) {
-        setAuthorized(true);
-
-        const docRef = doc(db, "siteContent", "homepage");
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-
-          setTitle(data.title || "");
-          setSubtitle(data.subtitle || "");
-          setWhatsapp(data.whatsapp || "");
-        }
-      } else {
-        window.location.href = "/login";
-      }
-
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  const saveChanges = async () => {
-    try {
-      const docRef = doc(db, "siteContent", "homepage");
-
-      await updateDoc(docRef, {
-        title,
-        subtitle,
-        whatsapp,
-      });
-
-      alert("Cambios guardados 🚲");
-    } catch (error) {
-      console.error(error);
-      alert("Error al guardar");
-    }
-  };
-
-  if (loading) {
-    return (
-      <main className="min-h-screen bg-black text-white flex items-center justify-center">
-        Verificando acceso...
-      </main>
-    );
-  }
-
-  if (!authorized) return null;
-
   return (
-    <main className="min-h-screen bg-black text-white p-10">
-      <h1 className="text-5xl font-bold mb-10">
-        Panel Admin 🚲
-      </h1>
+    <main className="min-h-screen bg-black text-white flex">
 
-      <div className="max-w-2xl space-y-6">
-        <div>
-          <label className="block mb-2">Título</label>
+      {/* SIDEBAR */}
+      <aside className="w-72 bg-zinc-950 border-r border-red-600/30 p-6 hidden md:flex flex-col">
 
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700"
-          />
+        {/* Logo */}
+        <div className="mb-12">
+          <h1 className="text-3xl font-black">
+            Bicicletas
+          </h1>
+
+          <p className="text-red-500 text-xl font-semibold">
+            San Francisco
+          </p>
         </div>
 
-        <div>
-          <label className="block mb-2">Subtítulo</label>
+        {/* Navegación */}
+        <nav className="flex flex-col gap-3">
 
-          <input
-            value={subtitle}
-            onChange={(e) => setSubtitle(e.target.value)}
-            className="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700"
-          />
+          <button className="flex items-center gap-4 bg-red-600/20 border border-red-600/30 px-5 py-4 rounded-2xl text-left hover:bg-red-600/30 transition">
+            <LayoutDashboard size={22} />
+            Dashboard
+          </button>
+
+          <button className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/5 transition">
+            <Images size={22} />
+            Galería
+          </button>
+
+          <button className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/5 transition">
+            <Wrench size={22} />
+            Servicios
+          </button>
+
+          <button className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/5 transition">
+            <Boxes size={22} />
+            Inventario
+          </button>
+
+          <button className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/5 transition">
+            <ShoppingCart size={22} />
+            Ventas
+          </button>
+
+          <button className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/5 transition">
+            <Settings size={22} />
+            Configuración
+          </button>
+
+        </nav>
+
+      </aside>
+
+      {/* CONTENIDO */}
+      <section className="flex-1 p-8">
+
+        {/* Header */}
+        <div className="flex justify-between items-center mb-10">
+
+          <div>
+            <h2 className="text-4xl font-black">
+              Dashboard 🚲
+            </h2>
+
+            <p className="text-zinc-400 mt-2">
+              Bienvenido al panel administrativo.
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 px-5 py-3 rounded-2xl">
+            Admin
+          </div>
+
         </div>
 
-        <div>
-          <label className="block mb-2">WhatsApp</label>
+        {/* Tarjetas */}
+        <div className="grid md:grid-cols-3 gap-6">
 
-          <input
-            value={whatsapp}
-            onChange={(e) => setWhatsapp(e.target.value)}
-            className="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700"
-          />
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-6">
+            <h3 className="text-zinc-400 text-lg mb-2">
+              Trabajos publicados
+            </h3>
+
+            <p className="text-5xl font-black text-red-500">
+              0
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-6">
+            <h3 className="text-zinc-400 text-lg mb-2">
+              Servicios activos
+            </h3>
+
+            <p className="text-5xl font-black text-red-500">
+              4
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-6">
+            <h3 className="text-zinc-400 text-lg mb-2">
+              Estado del sistema
+            </h3>
+
+            <p className="text-3xl font-black text-green-500">
+              Online
+            </p>
+          </div>
+
         </div>
 
-        <button
-          onClick={saveChanges}
-          className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-semibold"
-        >
-          Guardar cambios
-        </button>
-      </div>
+        {/* Próximamente */}
+        <div className="mt-10 bg-gradient-to-r from-red-600/20 to-black border border-red-600/20 rounded-3xl p-8">
+
+          <h3 className="text-3xl font-black mb-4">
+            Próximamente 🔥
+          </h3>
+
+          <p className="text-zinc-300 text-lg leading-relaxed">
+            Inventario, ventas, punto de venta, tickets,
+            clientes y estadísticas avanzadas.
+          </p>
+
+        </div>
+
+      </section>
     </main>
   );
 }
