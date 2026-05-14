@@ -361,7 +361,7 @@ const galleryInView = useInView(galleryRef, {
       {/* Imagen 1 */}
       <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
-          src="/images/trabajo1.jpeg"
+          src="/images/trabajo1.jpg"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
           alt="Trabajo 1"
         />
@@ -382,7 +382,7 @@ const galleryInView = useInView(galleryRef, {
       {/* Imagen 2 */}
       <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
-          src="/images/trabajo2.jpeg"
+          src="/images/trabajo2.jpg"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
           alt="Trabajo 2"
         />
@@ -391,11 +391,11 @@ const galleryInView = useInView(galleryRef, {
 
         <div className="absolute bottom-0 p-8 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
           <h3 className="text-2xl font-bold mb-2">
-            Ajuste Profesional
+            Soldadura Autógena
           </h3>
 
           <p className="text-zinc-300">
-            Precisión y rendimiento.
+            Precisión y resistencia para tu cuadro.
           </p>
         </div>
       </div>
@@ -403,7 +403,7 @@ const galleryInView = useInView(galleryRef, {
       {/* Imagen 3 */}
       <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
-          src="/images/trabajo3.jpeg"
+          src="/images/trabajo3.jpg"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
           alt="Trabajo 3"
         />
