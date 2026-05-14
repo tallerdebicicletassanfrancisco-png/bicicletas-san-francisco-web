@@ -208,28 +208,88 @@ useEffect(() => {
       </section>
 
       {/* GALERÍA */}
-      <section className="py-20 px-6 border-t border-red-600">
-        <h2 className="text-4xl font-bold text-center mb-14">
+      {/* GALERÍA PREMIUM */}
+<section className="py-24 px-6 border-t border-red-600 bg-black">
+  <div className="max-w-7xl mx-auto">
+
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-black mb-5">
         Trabajos <span className="text-red-500">Recientes</span>
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-      <img
-      src="https://images.unsplash.com/photo-1511994298241-608e28f14fde"
-      className="rounded-2xl h-72 w-full object-cover"
-      alt="Trabajo 1"
-      />
-      <img
-      src="https://images.unsplash.com/photo-1541625602330-2277a4c46182"
-      className="rounded-2xl h-72 w-full object-cover"
-      alt="Trabajo 2"
-      />
-      <img
-      src="https://images.unsplash.com/photo-1485965120184-e220f721d03e"
-      className="rounded-2xl h-72 w-full object-cover"
-      alt="Trabajo 3"
-      />
+      <p className="text-zinc-400 text-xl max-w-2xl mx-auto">
+        Restauraciones, pintura personalizada, mantenimiento premium
+        y bicicletas listas para rodar.
+      </p>
     </div>
+
+    <div className="grid md:grid-cols-3 gap-6">
+
+      {/* Imagen 1 */}
+      <div className="group relative overflow-hidden rounded-3xl">
+        <img
+          src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=1200&auto=format&fit=crop"
+          className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          alt="Trabajo 1"
+        />
+
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-500" />
+
+        <div className="absolute bottom-0 p-8 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          <h3 className="text-2xl font-bold mb-2">
+            Restauración Premium
+          </h3>
+
+          <p className="text-zinc-300">
+            Servicio completo y detallado.
+          </p>
+        </div>
+      </div>
+
+      {/* Imagen 2 */}
+      <div className="group relative overflow-hidden rounded-3xl">
+        <img
+          src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=1200&auto=format&fit=crop"
+          className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          alt="Trabajo 2"
+        />
+
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-500" />
+
+        <div className="absolute bottom-0 p-8 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          <h3 className="text-2xl font-bold mb-2">
+            Ajuste Profesional
+          </h3>
+
+          <p className="text-zinc-300">
+            Precisión y rendimiento.
+          </p>
+        </div>
+      </div>
+
+      {/* Imagen 3 */}
+      <div className="group relative overflow-hidden rounded-3xl">
+        <img
+          src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1200&auto=format&fit=crop"
+          className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          alt="Trabajo 3"
+        />
+
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-500" />
+
+        <div className="absolute bottom-0 p-8 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          <h3 className="text-2xl font-bold mb-2">
+            Bicicletas Custom
+          </h3>
+
+          <p className="text-zinc-300">
+            Diseños únicos y personalizados.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
       {/* CONTACTO */}
