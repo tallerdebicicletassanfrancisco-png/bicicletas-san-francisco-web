@@ -167,7 +167,7 @@ useEffect(() => {
           </div>
 
           <div className="group border border-white/10 bg-white/5 backdrop-blur-md p-6 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-red-500/40 hover:bg-white/10 hover:shadow-2xl hover:shadow-red-500/10">
-           <div className="text-5xl mb-4 transition-transform duration-500 group-hover:scale-110"> ✨</div>
+           <div className="text-5xl mb-4 transition-transform duration-500 group-hover:scale-110">🫧</div>
             <h3 className="text-xl font-semibold group-hover:text-red-400 transition-colors duration-300">Lavado Premium</h3>
           </div>
         </div>
