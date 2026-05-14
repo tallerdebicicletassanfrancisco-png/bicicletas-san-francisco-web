@@ -302,7 +302,10 @@ const galleryInView = useInView(galleryRef, {
 
       {/* RESEÑAS */}
       {/* RESEÑAS PREMIUM */}
-<section className="py-24 px-6 border-t border-red-600 bg-zinc-950">
+<section
+  id="reseñas"
+  className="py-24 px-6 border-t border-red-600 bg-zinc-950"
+>
   <div className="max-w-7xl mx-auto">
 
     <div className="text-center mb-16">
