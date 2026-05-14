@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
 import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Home() {
 const [content, setContent] = useState({
@@ -28,6 +30,17 @@ useEffect(() => {
 
   const whatsappLink =
     `https://wa.me/${content.whatsapp}?text=Hola%20quiero%20agendar%20servicio%20para%20mi%20bicicleta`;
+    const servicesRef = useRef(null);
+const servicesInView = useInView(servicesRef, {
+  once: true,
+  margin: "-100px",
+});
+
+const galleryRef = useRef(null);
+const galleryInView = useInView(galleryRef, {
+  once: true,
+  margin: "-100px",
+});
 
   return (
     <main className="bg-black text-white min-h-screen">
@@ -169,7 +182,17 @@ useEffect(() => {
 </section>
 
       {/* SERVICIOS */}
-      <section id="servicios" className="py-20 px-6 border-t border-red-600">
+      <motion.section
+          id="servicios"
+          ref={servicesRef}
+          initial={{ opacity: 0, y: 80 }}
+          animate={
+          servicesInView
+          ? { opacity: 1, y: 0 }
+          : { opacity: 0, y: 80 }
+        }
+        transition={{ duration: 1 }} 
+        className="py-20 px-6 border-t border-red-600">
         <h2 className="text-4xl font-bold text-center mb-14">
           Nuestros <span className="text-red-500">Servicios</span>
         </h2>
@@ -199,41 +222,127 @@ useEffect(() => {
         <p className="text-center mt-10 text-xl">
           Y mucho más... ¡Contáctanos para cualquier necesidad de tu bicicleta!
         </p>
-      </section>
+      </motion.section>
 
       {/* RESEÑAS */}
-      <section className="py-20 px-6 border-t border-red-600">
-        <h2 className="text-4xl font-bold text-center mb-14">
-          Lo que dicen nuestros <span className="text-red-500">clientes</span>
-        </h2>
+      {/* RESEÑAS PREMIUM */}
+<section className="py-24 px-6 border-t border-red-600 bg-zinc-950">
+  <div className="max-w-7xl mx-auto">
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          <div className="bg-zinc-900 p-6 rounded-2xl">
-            ⭐⭐⭐⭐⭐
-            <p className="mt-4">
-              Excelente servicio, mi bici quedó como nueva.
-            </p>
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-black mb-5">
+        Lo que dicen nuestros{" "}
+        <span className="text-red-500">clientes</span>
+      </h2>
+
+      <p className="text-zinc-400 text-xl">
+        Opiniones reales de Google Maps 🚲
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* Reseña 1 */}
+      <div className="group bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:border-red-500/40 hover:bg-white/10 hover:shadow-2xl hover:shadow-red-500/10">
+
+        <div className="flex gap-1 text-2xl mb-6">
+          ⭐⭐⭐⭐⭐
+        </div>
+
+        <p className="text-zinc-300 text-lg leading-relaxed mb-6">
+          “Excelente servicio para tu bicicleta, te orientan sobre lo que le están haciendo a tu bici y dan buena atención.”
+        </p>
+
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center text-xl font-bold">
+            T
           </div>
 
-          <div className="bg-zinc-900 p-6 rounded-2xl">
-            ⭐⭐⭐⭐⭐
-            <p className="mt-4">
-              Muy profesionales, 100% recomendados.
-            </p>
-          </div>
+          <div>
+            <h3 className="font-semibold text-lg">
+              trouchh
+            </h3>
 
-          <div className="bg-zinc-900 p-6 rounded-2xl">
-            ⭐⭐⭐⭐⭐
-            <p className="mt-4">
-              Rápidos y eficientes, de lo mejor en la zona.
+            <p className="text-zinc-500 text-sm">
+              Google Maps • Local Guide
             </p>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Reseña 2 */}
+      <div className="group bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:border-red-500/40 hover:bg-white/10 hover:shadow-2xl hover:shadow-red-500/10">
+
+        <div className="flex gap-1 text-2xl mb-6">
+          ⭐⭐⭐⭐⭐
+        </div>
+
+        <p className="text-zinc-300 text-lg leading-relaxed mb-6">
+          “Excelente servicio y atención. Precios accesibles y compromiso con tiempos de entrega. Súper recomendable.”
+        </p>
+
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center text-xl font-bold">
+            J
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg">
+              Jonathan Alcocer Garcia
+            </h3>
+
+            <p className="text-zinc-500 text-sm">
+              Google Maps • Local Guide
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Reseña 3 */}
+      <div className="group bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:border-red-500/40 hover:bg-white/10 hover:shadow-2xl hover:shadow-red-500/10">
+
+        <div className="flex gap-1 text-2xl mb-6">
+          ⭐⭐⭐⭐⭐
+        </div>
+
+        <p className="text-zinc-300 text-lg leading-relaxed mb-6">
+          “Excelente servicio, la pintura hace que queden como nuevas. Lo recomiendo bastante 🤩”
+        </p>
+
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center text-xl font-bold">
+            A
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg">
+              Ana Martínez
+            </h3>
+
+            <p className="text-zinc-500 text-sm">
+              Google Maps • Local Guide
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* GALERÍA */}
       {/* GALERÍA PREMIUM */}
-<section className="py-24 px-6 border-t border-red-600 bg-black">
+<motion.section
+  ref={galleryRef}
+  initial={{ opacity: 0, y: 100 }}
+  animate={
+    galleryInView
+      ? { opacity: 1, y: 0 }
+      : { opacity: 0, y: 100 }
+  }
+  transition={{ duration: 1 }}
+  className="py-24 px-6 border-t border-red-600 bg-black"
+>
   <div className="max-w-7xl mx-auto">
 
     <div className="text-center mb-16">
@@ -250,7 +359,7 @@ useEffect(() => {
     <div className="grid md:grid-cols-3 gap-6">
 
       {/* Imagen 1 */}
-      <div className="group relative overflow-hidden rounded-3xl">
+      <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
           src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=1200&auto=format&fit=crop"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -271,7 +380,7 @@ useEffect(() => {
       </div>
 
       {/* Imagen 2 */}
-      <div className="group relative overflow-hidden rounded-3xl">
+      <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
           src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=1200&auto=format&fit=crop"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -292,7 +401,7 @@ useEffect(() => {
       </div>
 
       {/* Imagen 3 */}
-      <div className="group relative overflow-hidden rounded-3xl">
+      <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
           src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1200&auto=format&fit=crop"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -314,7 +423,7 @@ useEffect(() => {
 
     </div>
   </div>
-</section>
+</motion.section>
 
       {/* CONTACTO */}
       <section className="py-20 px-6 border-t border-red-600 bg-zinc-950">
