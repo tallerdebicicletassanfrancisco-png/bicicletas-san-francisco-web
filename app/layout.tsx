@@ -77,12 +77,11 @@ export default function RootLayout({
           addressCountry: "MX",
         },
 
-        geo: {
+geo: {
   "@type": "GeoCoordinates",
-  latitude: 19.2527,
-  longitude: -99.6176,
+  latitude: 19.2649,
+  longitude: -99.6182,
 },
-
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
