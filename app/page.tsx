@@ -625,8 +625,8 @@ const galleryInView = useInView(galleryRef, {
       {/* Mapa */}
       <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
 
-        <iframe
-  src="https://www.google.com/maps?q=19.2649,-99.6182&z=17&output=embed"
+       <iframe
+  src="https://www.google.com/maps?q=19.2644969,-99.5699618&z=17&output=embed"
   className="w-full h-[400px] rounded-2xl"
   loading="lazy"
 />
