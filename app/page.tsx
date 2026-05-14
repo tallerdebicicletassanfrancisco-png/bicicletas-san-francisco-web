@@ -425,37 +425,139 @@ const galleryInView = useInView(galleryRef, {
   </div>
 </motion.section>
 
-      {/* CONTACTO */}
-      <section className="py-20 px-6 border-t border-red-600 bg-zinc-950">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
-          <div>
-            <h2 className="text-4xl font-bold mb-8">Contáctanos</h2>
+      {/* CONTACTO PREMIUM */}
+<section
+  id="contacto"
+  className="py-24 px-6 border-t border-red-600 bg-black"
+>
+  <div className="max-w-7xl mx-auto">
 
-            <p className="mb-4">
-              📍 Cam. Viejo a San Mateo 494, Bella Vista, Metepec.
-            </p>
-            <p className="mb-4">🕒 Lunes a Viernes 10:00 AM - 6:00 PM</p>
-            <p className="mb-4">🕒 Sábado 10:00 AM - 4:00 PM</p>
-            <p className="mb-4">🕒 Domingo 11:00 AM - 2:00 PM</p>
-            <p className="mb-6">📞 WhatsApp: {content.whatsapp}</p>
+    {/* Título */}
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-black mb-5">
+        Contáctanos
+      </h2>
 
-            <a
-              href="https://maps.app.goo.gl/EAnNPgVaKDq9dNiF6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-red-600 px-6 py-3 rounded-xl inline-block"
-            >
-              Cómo llegar
-            </a>
+      <p className="text-zinc-400 text-xl">
+        Agenda tu servicio y dale nueva vida a tu bicicleta 🚲
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-10">
+
+      {/* Información */}
+      <div className="space-y-6">
+
+        {/* Dirección */}
+        <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-6 transition-all duration-500 hover:border-red-500/40 hover:bg-white/10">
+
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-red-600 flex items-center justify-center text-2xl">
+              📍
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold">
+                Ubicación
+              </h3>
+
+              <p className="text-zinc-400">
+                Metepec, Estado de México
+              </p>
+            </div>
           </div>
 
-          <iframe
-            src="https://www.google.com/maps?q=Camino%20Viejo%20a%20San%20Mateo%20495%20Metepec&output=embed"
-            className="w-full h-[400px] rounded-2xl"
-            loading="lazy"
-          />
+          <p className="text-zinc-300 text-lg leading-relaxed">
+            Cam. Viejo a San Mateo 494, Bella Vista,
+            Metepec, Estado de México.
+          </p>
         </div>
-      </section>
+
+        {/* Horarios */}
+        <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-6 transition-all duration-500 hover:border-red-500/40 hover:bg-white/10">
+
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-red-600 flex items-center justify-center text-2xl">
+              🕒
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold">
+                Horarios
+              </h3>
+
+              <p className="text-zinc-400">
+                Atención semanal
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-2 text-zinc-300 text-lg">
+            <p>Lunes a Viernes — 10:00 AM a 6:00 PM</p>
+            <p>Sábado — 10:00 AM a 4:00 PM</p>
+            <p>Domingo — 11:00 AM a 2:00 PM</p>
+          </div>
+        </div>
+
+        {/* WhatsApp */}
+        <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-6 transition-all duration-500 hover:border-green-500/40 hover:bg-white/10">
+
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-14 h-14 rounded-2xl bg-green-600 flex items-center justify-center text-2xl">
+              💬
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold">
+                WhatsApp
+              </h3>
+
+              <p className="text-zinc-400">
+                Atención rápida
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-4">
+
+            <a
+              href="https://wa.me/527222941031"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 transition-all duration-300 hover:scale-105 px-6 py-4 rounded-2xl font-semibold text-lg"
+            >
+              722 294 1031
+            </a>
+
+            <a
+              href="https://wa.me/527227008264"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 transition-all duration-300 hover:scale-105 px-6 py-4 rounded-2xl font-semibold text-lg"
+            >
+              722 700 8264
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      {/* Mapa */}
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+
+        <iframe
+          src="https://www.google.com/maps?q=Camino%20Viejo%20a%20San%20Mateo%20495%20Metepec&output=embed"
+          className="w-full h-full min-h-[650px]"
+          loading="lazy"
+        />
+
+        <div className="absolute inset-0 ring-1 ring-white/10 rounded-3xl pointer-events-none" />
+      </div>
+
+    </div>
+  </div>
+</section>
     </main>
   );
 }
