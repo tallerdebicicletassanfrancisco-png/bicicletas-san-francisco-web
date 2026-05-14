@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
+import { motion } from "framer-motion";
 
 export default function Home() {
 const [content, setContent] = useState({
@@ -96,8 +97,12 @@ useEffect(() => {
   <div className="absolute w-[600px] h-[600px] bg-red-600/20 blur-3xl rounded-full top-[-200px] right-[-150px]" />
 
   {/* Contenido */}
-  <div className="relative z-10 text-center px-6 max-w-5xl">
-
+  <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="relative z-10 text-center px-6 max-w-5xl"
+>
     <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6">
       {content.title}
     </h1>
@@ -125,7 +130,12 @@ useEffect(() => {
     </div>
 
     {/* Stats */}
-    <div className="grid grid-cols-3 gap-6 mt-20 max-w-3xl mx-auto">
+    <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 1 }}
+  className="grid grid-cols-3 gap-6 mt-20 max-w-3xl mx-auto"
+>
       <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6">
         <h3 className="text-3xl font-bold text-red-500">13+</h3>
         <p className="text-zinc-300 mt-2">Reseñas</p>
@@ -140,8 +150,8 @@ useEffect(() => {
         <h3 className="text-3xl font-bold text-red-500">100%</h3>
         <p className="text-zinc-300 mt-2">Pasión ciclista</p>
       </div>
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 </section>
 
       {/* SERVICIOS */}
