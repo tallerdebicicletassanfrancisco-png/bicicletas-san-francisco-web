@@ -558,6 +558,138 @@ const galleryInView = useInView(galleryRef, {
     </div>
   </div>
 </section>
+
+{/* FOOTER PREMIUM */}
+<footer className="border-t border-red-600 bg-zinc-950 px-6 py-16">
+
+  <div className="max-w-7xl mx-auto">
+
+    <div className="grid md:grid-cols-3 gap-12">
+
+      {/* Marca */}
+      <div>
+        <div className="flex items-center gap-4 mb-6">
+
+          <Image
+            src="/images/logo2.png"
+            alt="Bicicletas San Francisco"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+
+          <div>
+            <h3 className="text-2xl font-black">
+              Bicicletas
+            </h3>
+
+            <p className="text-red-500 text-xl font-semibold">
+              San Francisco
+            </p>
+          </div>
+        </div>
+
+        <p className="text-zinc-400 leading-relaxed text-lg">
+          Taller profesional de bicicletas en Metepec.
+          Restauración, mantenimiento, pintura y servicio premium 🚲
+        </p>
+      </div>
+
+      {/* Navegación */}
+      <div>
+        <h3 className="text-2xl font-bold mb-6">
+          Navegación
+        </h3>
+
+        <div className="flex flex-col gap-4 text-zinc-400 text-lg">
+
+          <a
+            href="#inicio"
+            className="hover:text-red-500 transition"
+          >
+            Inicio
+          </a>
+
+          <a
+            href="#servicios"
+            className="hover:text-red-500 transition"
+          >
+            Servicios
+          </a>
+
+          <a
+            href="#reseñas"
+            className="hover:text-red-500 transition"
+          >
+            Reseñas
+          </a>
+
+          <a
+            href="#contacto"
+            className="hover:text-red-500 transition"
+          >
+            Contacto
+          </a>
+
+        </div>
+      </div>
+
+      {/* Redes */}
+      <div>
+        <h3 className="text-2xl font-bold mb-6">
+          Síguenos
+        </h3>
+
+        <div className="flex gap-4 flex-wrap">
+
+          <a
+            href="https://www.instagram.com/tallerdebicicletassanfrancisco/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 border border-white/10 hover:border-pink-500/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
+          >
+            📸 Instagram
+          </a>
+
+          <a
+            href="https://www.facebook.com/BicicletasSanFrancisco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 border border-white/10 hover:border-blue-500/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
+          >
+            👍 Facebook
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@bicicletassanfrancisco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 border border-white/10 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
+          >
+            🎶 TikTok
+          </a>
+
+          <a
+            href="https://wa.me/527227008264"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 border border-white/10 hover:border-green-500/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
+          >
+            💬 WhatsApp
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    {/* Bottom */}
+    <div className="border-t border-white/10 mt-14 pt-8 text-center text-zinc-500">
+      © 2026 Bicicletas San Francisco — Todos los derechos reservados.
+    </div>
+
+  </div>
+</footer>
     </main>
   );
 }
