@@ -46,7 +46,84 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+     <body className="min-h-full flex flex-col">
+
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SportsStore",
+
+        name: "Bicicletas San Francisco",
+
+        image:
+          "https://www.bicicletassanfrancisco.com/images/logo2.png",
+
+        url: "https://www.bicicletassanfrancisco.com",
+
+        telephone: [
+          "+52 722 294 1031",
+          "+52 722 700 8264",
+        ],
+
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Cam. Viejo a San Mateo 494",
+          addressLocality: "Metepec",
+          addressRegion: "Estado de México",
+          postalCode: "52172",
+          addressCountry: "MX",
+        },
+
+        geo: {
+  "@type": "GeoCoordinates",
+  latitude: 19.2527,
+  longitude: -99.6176,
+},
+
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+            ],
+            opens: "10:00",
+            closes: "18:00",
+          },
+
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Saturday",
+            opens: "10:00",
+            closes: "16:00",
+          },
+
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Sunday",
+            opens: "11:00",
+            closes: "14:00",
+          },
+        ],
+
+        sameAs: [
+          "https://www.facebook.com/bicicletassanfrancisco",
+          "https://www.instagram.com/tallerdebicicletassanfrancisco",
+          "https://www.tiktok.com/@bicicletassanfrancisco",
+        ],
+      }),
+    }}
+  />
+
+  {children}
+
+</body>
     </html>
   );
 }

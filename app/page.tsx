@@ -626,10 +626,10 @@ const galleryInView = useInView(galleryRef, {
       <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
 
         <iframe
-          src="https://www.google.com/maps?q=Camino%20Viejo%20a%20San%20Mateo%20495%20Metepec&output=embed"
-          className="w-full h-full min-h-[650px]"
-          loading="lazy"
-        />
+  src="https://www.google.com/maps?q=19.2527,-99.6176&z=17&output=embed"
+  className="w-full h-[400px] rounded-2xl"
+  loading="lazy"
+/>
 
         <div className="absolute inset-0 ring-1 ring-white/10 rounded-3xl pointer-events-none" />
       </div>
