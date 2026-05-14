@@ -76,43 +76,79 @@ useEffect(() => {
 </nav>
 
       {/* HERO */}
-      <section
-        className="relative min-h-screen flex items-center px-6 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1485965120184-e220f721d03e')",
-        }}
+      {/* HERO PREMIUM */}
+<section
+  id="inicio"
+  className="relative min-h-screen flex items-center justify-center overflow-hidden"
+>
+  {/* Fondo */}
+  <div
+    className="absolute inset-0 bg-cover bg-center scale-105"
+    style={{
+      backgroundImage:
+        "url('https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=2070&auto=format&fit=crop')",
+    }}
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/70" />
+
+  {/* Glow */}
+  <div className="absolute w-[600px] h-[600px] bg-red-600/20 blur-3xl rounded-full top-[-200px] right-[-150px]" />
+
+  {/* Contenido */}
+  <div className="relative z-10 text-center px-6 max-w-5xl">
+    <div className="inline-block mb-6 px-5 py-2 rounded-full border border-red-500/40 bg-white/5 backdrop-blur-md">
+      <p className="text-sm tracking-[0.25em] text-red-400 uppercase">
+        Taller Profesional 🚲
+      </p>
+    </div>
+
+    <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6">
+      {content.title}
+    </h1>
+
+    <p className="text-zinc-300 text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed">
+      {content.subtitle}
+    </p>
+
+    <div className="flex flex-wrap justify-center gap-5">
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-red-600 hover:bg-red-700 transition-all duration-300 hover:scale-105 px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-red-600/30"
       >
-        <div className="absolute inset-0 bg-black/60" />
+        Agendar Servicio
+      </a>
 
-        <div className="relative z-10 max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            {content.title}
-          </h1>
+      <a
+        href="#servicios"
+        className="border border-white/20 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-all duration-300 px-8 py-4 rounded-2xl text-lg"
+      >
+        Ver Servicios
+      </a>
+    </div>
 
-          <p className="text-2xl mb-8">
-            {content.subtitle}
-          </p>
+    {/* Stats */}
+    <div className="grid grid-cols-3 gap-6 mt-20 max-w-3xl mx-auto">
+      <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6">
+        <h3 className="text-3xl font-bold text-red-500">13+</h3>
+        <p className="text-zinc-300 mt-2">Reseñas</p>
+      </div>
 
-          <div className="flex gap-4 flex-wrap">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl text-lg font-semibold"
-            >
-              Agendar Servicio
-            </a>
+      <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6">
+        <h3 className="text-3xl font-bold text-red-500">4.1★</h3>
+        <p className="text-zinc-300 mt-2">Google Maps</p>
+      </div>
 
-            <a
-              href="#servicios"
-              className="border border-white px-8 py-4 rounded-xl text-lg"
-            >
-              Ver Servicios
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6">
+        <h3 className="text-3xl font-bold text-red-500">100%</h3>
+        <p className="text-zinc-300 mt-2">Pasión ciclista</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* SERVICIOS */}
       <section id="servicios" className="py-20 px-6 border-t border-red-600">
