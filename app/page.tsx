@@ -361,7 +361,7 @@ const galleryInView = useInView(galleryRef, {
       {/* Imagen 1 */}
       <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
-          src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=1200&auto=format&fit=crop"
+          src="/images/trabajo1.jpeg"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
           alt="Trabajo 1"
         />
@@ -382,7 +382,7 @@ const galleryInView = useInView(galleryRef, {
       {/* Imagen 2 */}
       <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
-          src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=1200&auto=format&fit=crop"
+          src="/images/trabajo2.jpeg"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
           alt="Trabajo 2"
         />
@@ -403,7 +403,7 @@ const galleryInView = useInView(galleryRef, {
       {/* Imagen 3 */}
       <div className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3">
         <img
-          src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1200&auto=format&fit=crop"
+          src="/images/trabajo3.jpeg"
           className="h-[500px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
           alt="Trabajo 3"
         />
