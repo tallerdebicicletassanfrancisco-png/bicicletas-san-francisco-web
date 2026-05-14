@@ -78,31 +78,45 @@ useEffect(() => {
 
 
       {/* HERO PREMIUM */}
+{/* HERO PREMIUM */}
 <section
   id="inicio"
-  className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28">
-  {/* Fondo */}
-  <div
-    className="absolute inset-0 bg-cover bg-center scale-105"
+  className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28"
+>
+  {/* Fondo Parallax */}
+  <motion.div
+    initial={{ scale: 1.15 }}
+    animate={{ scale: 1.05 }}
+    transition={{ duration: 6 }}
+    className="absolute inset-0 bg-cover bg-center"
     style={{
       backgroundImage:
         "url('https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=2070&auto=format&fit=crop')",
     }}
   />
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/70" />
+  {/* Overlay dinámico */}
+  <motion.div
+    initial={{ opacity: 0.9 }}
+    animate={{ opacity: 0.7 }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      repeatType: "reverse",
+    }}
+    className="absolute inset-0 bg-black"
+  />
 
   {/* Glow */}
   <div className="absolute w-[600px] h-[600px] bg-red-600/20 blur-3xl rounded-full top-[-200px] right-[-150px]" />
 
   {/* Contenido */}
   <motion.div
-  initial={{ opacity: 0, y: 40 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="relative z-10 text-center px-6 max-w-5xl"
->
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className="relative z-10 text-center px-6 max-w-5xl"
+  >
     <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6">
       {content.title}
     </h1>
@@ -131,11 +145,11 @@ useEffect(() => {
 
     {/* Stats */}
     <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.4, duration: 1 }}
-  className="grid grid-cols-3 gap-6 mt-20 max-w-3xl mx-auto"
->
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 1 }}
+      className="grid grid-cols-3 gap-6 mt-20 max-w-3xl mx-auto"
+    >
       <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6">
         <h3 className="text-3xl font-bold text-red-500">13+</h3>
         <p className="text-zinc-300 mt-2">Reseñas</p>
