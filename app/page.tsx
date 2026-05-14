@@ -79,8 +79,7 @@ useEffect(() => {
       {/* HERO PREMIUM */}
 <section
   id="inicio"
-  className="relative min-h-screen flex items-center justify-center overflow-hidden"
->
+  className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28">
   {/* Fondo */}
   <div
     className="absolute inset-0 bg-cover bg-center scale-105"
@@ -98,11 +97,6 @@ useEffect(() => {
 
   {/* Contenido */}
   <div className="relative z-10 text-center px-6 max-w-5xl">
-    <div className="inline-block mb-6 px-5 py-2 rounded-full border border-red-500/40 bg-white/5 backdrop-blur-md">
-      <p className="text-sm tracking-[0.25em] text-red-400 uppercase">
-        Taller Profesional 🚲
-      </p>
-    </div>
 
     <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6">
       {content.title}
