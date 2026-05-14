@@ -13,8 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bicicletas San Francisco",
-  description: "Taller especializado, venta de bicicletas y accesorios en Metepec.",
+  title: "Bicicletas San Francisco | Taller de bicicletas en Metepec",
+
+  description:
+    "Taller profesional de bicicletas en Metepec. Afinación, frenos, suspensión, pintura, mantenimiento y servicio especializado para bicicletas.",
+
+  keywords: [
+    "bicicletas Metepec",
+    "taller de bicicletas",
+    "reparación de bicicletas Metepec",
+    "afinación bicicletas",
+    "servicio bicicletas",
+    "bicicletas San Francisco",
+    "mantenimiento bicicletas",
+  ],
+
+  openGraph: {
+    title: "Bicicletas San Francisco",
+    description:
+      "Servicio profesional de bicicletas en Metepec.",
+    images: ["/images/logo2.png"],
+  },
 };
 
 export default function RootLayout({
