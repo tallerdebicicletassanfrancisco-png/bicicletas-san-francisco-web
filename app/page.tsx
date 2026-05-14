@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 export default function Home() {
 const [content, setContent] = useState({
@@ -30,6 +29,7 @@ useEffect(() => {
 
   const whatsappLink =
     `https://wa.me/${content.whatsapp}?text=Hola%20quiero%20agendar%20servicio%20para%20mi%20bicicleta`;
+    const [mobileMenu, setMobileMenu] = useState(false);
     const servicesRef = useRef(null);
 const servicesInView = useInView(servicesRef, {
   once: true,
@@ -45,10 +45,10 @@ const galleryInView = useInView(galleryRef, {
   return (
     <main className="bg-black text-white min-h-screen">
       {/* NAVBAR */}
-      {/* NAVBAR */}
+     {/* NAVBAR */}
 <nav className="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-red-600/50 shadow-lg">
   <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-    
+
     {/* Logo + Marca */}
     <div className="flex items-center gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer">
       <Image
@@ -64,29 +64,105 @@ const galleryInView = useInView(galleryRef, {
         <p className="text-white text-lg md:text-xl font-bold tracking-wide">
           Bicicletas
         </p>
+
         <p className="text-red-500 text-base md:text-lg font-semibold">
           San Francisco
         </p>
       </div>
     </div>
 
-    {/* Menú */}
+    {/* Menú desktop */}
     <div className="hidden lg:flex gap-8 text-white font-medium">
-      <a href="#inicio" className="hover:text-red-500 transition">Inicio</a>
-      <a href="#servicios" className="hover:text-red-500 transition">Servicios</a>
-      <a href="#reseñas" className="hover:text-red-500 transition">Reseñas</a>
-      <a href="#contacto" className="hover:text-red-500 transition">Contacto</a>
+      <a href="#inicio" className="hover:text-red-500 transition">
+        Inicio
+      </a>
+
+      <a href="#servicios" className="hover:text-red-500 transition">
+        Servicios
+      </a>
+
+      <a href="#reseñas" className="hover:text-red-500 transition">
+        Reseñas
+      </a>
+
+      <a href="#contacto" className="hover:text-red-500 transition">
+        Contacto
+      </a>
     </div>
 
-    {/* Botón WhatsApp */}
+    {/* Desktop WhatsApp */}
     <a
       href={whatsappLink}
       target="_blank"
-      className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105"
+      rel="noopener noreferrer"
+      className="hidden lg:flex bg-green-500 hover:bg-green-600 text-white px-4 md:px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105"
     >
       WhatsApp
     </a>
+
+    {/* Botón móvil */}
+    <button
+      onClick={() => setMobileMenu(!mobileMenu)}
+      className="lg:hidden text-3xl text-white"
+    >
+      {mobileMenu ? "✕" : "☰"}
+    </button>
+
   </div>
+
+  {/* Menú móvil */}
+  {mobileMenu && (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-red-600/40"
+    >
+      <div className="flex flex-col gap-6 p-6 text-white text-xl font-medium">
+
+        <a
+          href="#inicio"
+          onClick={() => setMobileMenu(false)}
+          className="hover:text-red-500 transition"
+        >
+          Inicio
+        </a>
+
+        <a
+          href="#servicios"
+          onClick={() => setMobileMenu(false)}
+          className="hover:text-red-500 transition"
+        >
+          Servicios
+        </a>
+
+        <a
+          href="#reseñas"
+          onClick={() => setMobileMenu(false)}
+          className="hover:text-red-500 transition"
+        >
+          Reseñas
+        </a>
+
+        <a
+          href="#contacto"
+          onClick={() => setMobileMenu(false)}
+          className="hover:text-red-500 transition"
+        >
+          Contacto
+        </a>
+
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-600 hover:bg-green-700 transition-all duration-300 text-center py-4 rounded-2xl font-semibold"
+        >
+          WhatsApp
+        </a>
+
+      </div>
+    </motion.div>
+  )}
 </nav>
 
 
