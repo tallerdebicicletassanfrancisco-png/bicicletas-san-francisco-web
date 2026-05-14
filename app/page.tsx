@@ -43,21 +43,21 @@ useEffect(() => {
         width={280}
         height={100}
         priority
-        className="h-16 w-auto object-contain"
+        className="h-12 md:h-16 w-auto object-contain"
       />
 
       <div className="leading-tight">
-        <p className="text-white text-xl font-bold tracking-wide">
+        <p className="text-white text-lg md:text-xl font-bold tracking-wide">
           Bicicletas
         </p>
-        <p className="text-red-500 text-lg font-semibold">
+        <p className="text-red-500 text-base md:text-lg font-semibold">
           San Francisco
         </p>
       </div>
     </div>
 
     {/* Menú */}
-    <div className="hidden md:flex gap-8 text-white font-medium">
+    <div className="hidden lg:flex gap-8 text-white font-medium">
       <a href="#inicio" className="hover:text-red-500 transition">Inicio</a>
       <a href="#servicios" className="hover:text-red-500 transition">Servicios</a>
       <a href="#reseñas" className="hover:text-red-500 transition">Reseñas</a>
@@ -68,7 +68,7 @@ useEffect(() => {
     <a
       href={whatsappLink}
       target="_blank"
-      className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105"
+      className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105"
     >
       WhatsApp
     </a>
