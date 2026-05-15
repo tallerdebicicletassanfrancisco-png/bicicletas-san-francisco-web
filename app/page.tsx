@@ -554,10 +554,26 @@ const galleryInView = useInView(galleryRef, {
             </div>
           </div>
 
-          <p className="text-zinc-300 text-lg leading-relaxed">
-            Cam. Viejo a San Mateo 494, Bella Vista,
-            Metepec, Estado de México.
-          </p>
+<p className="text-zinc-300 text-lg leading-relaxed mb-6">
+  Cam. Viejo a San Mateo 494, Bella Vista,
+  Metepec, Estado de México.
+</p>
+
+<a
+  href="https://maps.app.goo.gl/SF3VXLJVX6FgVCGR6?g_st=ic"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() =>
+    trackEvent(
+      "click_maps",
+      "engagement",
+      "google_maps"
+    )
+  }
+  className="inline-flex bg-red-600 hover:bg-red-700 transition-all duration-300 hover:scale-105 px-6 py-3 rounded-2xl font-semibold"
+>
+  📍 Cómo llegar
+</a>
         </div>
 
         {/* Horarios */}
@@ -733,6 +749,13 @@ const galleryInView = useInView(galleryRef, {
             href="https://www.instagram.com/tallerdebicicletassanfrancisco/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+  trackEvent(
+    "click_instagram",
+    "social",
+    "instagram"
+  )
+}
             className="bg-white/5 border border-white/10 hover:border-pink-500/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
           >
             📸 Instagram
@@ -742,6 +765,13 @@ const galleryInView = useInView(galleryRef, {
             href="https://www.facebook.com/BicicletasSanFrancisco"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+  trackEvent(
+    "click_facebook",
+    "social",
+    "facebook"
+  )
+}
             className="bg-white/5 border border-white/10 hover:border-blue-500/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
           >
             👍 Facebook
@@ -751,6 +781,13 @@ const galleryInView = useInView(galleryRef, {
             href="https://www.tiktok.com/@bicicletassanfrancisco"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+  trackEvent(
+    "click_tiktok",
+    "social",
+    "tiktok"
+  )
+}
             className="bg-white/5 border border-white/10 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
           >
             🎶 TikTok
@@ -760,6 +797,13 @@ const galleryInView = useInView(galleryRef, {
             href="https://wa.me/527227008264"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+  trackEvent(
+    "click_whatsapp",
+    "social",
+    "whatsapp"
+  )
+}
             className="bg-white/5 border border-white/10 hover:border-green-500/40 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 rounded-2xl px-6 py-4"
           >
             💬 WhatsApp
