@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   signOut,
+  User,
 } from "firebase/auth";
 
 import { auth } from "@/app/firebase";
@@ -19,23 +20,26 @@ export default function AdminLayout({
 }) {
   const router = useRouter();
 
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(
       auth,
-      (user) => {
-       if (!user) {
-  setLoading(false);
-  router.push("/login");
-} else {
-  setLoading(false);
-}
+      (firebaseUser) => {
+        setUser(firebaseUser);
+        setLoading(false);
       }
     );
 
     return () => unsubscribe();
-  }, [router]);
+  }, []);
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push("/login");
+    }
+  }, [loading, user, router]);
 
   const links = [
     {
@@ -82,6 +86,8 @@ export default function AdminLayout({
       </div>
     );
   }
+
+  if (!user) return null;
 
   return (
     <div className="min-h-screen bg-black text-white flex">
