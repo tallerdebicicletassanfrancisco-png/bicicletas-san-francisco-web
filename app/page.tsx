@@ -6,6 +6,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import { trackEvent } from "./lib/gtag";
 
 export default function Home() {
 const [content, setContent] = useState({
@@ -219,6 +220,13 @@ const galleryInView = useInView(galleryRef, {
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() =>
+  trackEvent(
+    "click_whatsapp",
+    "engagement",
+    "hero_whatsapp"
+  )
+}
         className="bg-red-600 hover:bg-red-700 transition-all duration-300 hover:scale-105 px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-red-600/30"
       >
         Agendar Servicio
