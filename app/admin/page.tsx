@@ -40,7 +40,31 @@ export default function AdminDashboard() {
     },
   ];
 
+const stats = [
+  {
+    title: "Visitas Web",
+    value: "1,284",
+    icon: "🌐",
+  },
+  {
+    title: "Clicks WhatsApp",
+    value: "94",
+    icon: "💬",
+  },
+  {
+    title: "Órdenes Activas",
+    value: "12",
+    icon: "🛠️",
+  },
+  {
+    title: "Productos",
+    value: "38",
+    icon: "📦",
+  },
+];
+
   return (
+    
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-7xl mx-auto">
 
@@ -53,7 +77,29 @@ export default function AdminDashboard() {
             Bicicletas San Francisco 🚲
           </p>
         </div>
+        {/* Stats */}
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
 
+            {stats.map((stat) => (
+         <div
+            key={stat.title}
+            className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-red-500/40 hover:bg-white/10 transition-all duration-300"
+          >
+          <div className="text-4xl mb-4">
+            {stat.icon}
+          </div>
+
+            <h2 className="text-zinc-400 text-lg mb-2">
+              {stat.title}
+            </h2>
+
+            <p className="text-3xl font-black">
+              {stat.value}
+            </p>
+        </div>
+  ))}
+
+</div>
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
           {cards.map((card) => (
@@ -79,5 +125,6 @@ export default function AdminDashboard() {
         </div>
       </div>
     </main>
+    
   );
 }

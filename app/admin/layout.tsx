@@ -2,8 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import {onAuthStateChanged,signOut,} from "firebase/auth";
+
+import {
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+
 import { auth } from "@/app/firebase";
+
 import { useRouter } from "next/navigation";
 
 export default function AdminLayout({
@@ -12,16 +18,20 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const router = useRouter();
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        router.push("/login");
-      } else {
-        setLoading(false);
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (user) => {
+        if (!user) {
+          router.push("/login");
+        } else {
+          setLoading(false);
+        }
       }
-    });
+    );
 
     return () => unsubscribe();
   }, [router]);
@@ -79,6 +89,7 @@ export default function AdminLayout({
       <aside className="w-72 border-r border-white/10 bg-zinc-950 p-6 hidden md:flex flex-col">
 
         <div className="mb-12">
+
           <h1 className="text-3xl font-black">
             Admin
           </h1>
@@ -86,12 +97,14 @@ export default function AdminLayout({
           <p className="text-zinc-500 mt-2">
             Bicicletas San Francisco 🚲
           </p>
+
           <button
-  onClick={() => signOut(auth)}
-  className="mt-6 bg-red-600 hover:bg-red-700 transition-all duration-300 px-5 py-3 rounded-2xl font-semibold"
->
-  Cerrar sesión
-</button>
+            onClick={() => signOut(auth)}
+            className="mt-6 bg-red-600 hover:bg-red-700 transition-all duration-300 px-5 py-3 rounded-2xl font-semibold"
+          >
+            Cerrar sesión
+          </button>
+
         </div>
 
         <nav className="flex flex-col gap-3">
