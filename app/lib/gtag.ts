@@ -11,7 +11,5 @@ export const trackEvent = (
       event_category: category,
       event_label: label,
     });
-
-    console.log("Evento enviado:", action);
   }
 };
