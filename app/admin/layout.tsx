@@ -25,11 +25,12 @@ export default function AdminLayout({
     const unsubscribe = onAuthStateChanged(
       auth,
       (user) => {
-        if (!user) {
-          router.push("/login");
-        } else {
-          setLoading(false);
-        }
+       if (!user) {
+  setLoading(false);
+  router.push("/login");
+} else {
+  setLoading(false);
+}
       }
     );
 
