@@ -6,9 +6,26 @@ import { auth, googleProvider } from "../firebase";
 export default function LoginPage() {
   const handleLogin = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      const result = await signInWithPopup(
+  auth,
+  googleProvider
+);
 
-      window.location.href = "/admin";
+const email = result.user.email;
+
+if (
+  email !== "tallerdebicicletassanfrancisco@gmail.com"
+) {
+  await auth.signOut();
+
+  alert(
+    "No tienes permisos para acceder."
+  );
+
+  return;
+}
+
+window.location.href = "/admin";
     } 
     catch (error: any) {
   console.error(error);
